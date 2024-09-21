@@ -1,4 +1,3 @@
-// app.js
 const express = require('express');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db.js');
@@ -11,13 +10,14 @@ dotenv.config();
 // Connect to MongoDB
 connectDB();
 
+// Initialize Express
 const app = express();
 
-// Middleware to enable CORS
+// Enable CORS with environment-dependent origin
 app.use(cors({
-    origin: 'http://localhost:3011', // Change this to match your frontend URL
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Add other methods as needed
-    credentials: true // Allow credentials if required
+    origin: process.env.FRONTEND_URL || 'http://localhost:3011',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
 }));
 
 // Middleware to parse JSON requests
@@ -26,8 +26,8 @@ app.use(express.json());
 // Routes
 app.use('/api/users', userRoutes);
 
+// Start server
 const PORT = process.env.PORT || 3012;
 app.listen(PORT, () => {
-
-  console.log(`Server running on ports ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
