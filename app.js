@@ -7,7 +7,6 @@ const cors = require('cors');
 // Load environment variables
 dotenv.config();
 
-// Connect to MongoDB
 connectDB();
 
 // Initialize Express
