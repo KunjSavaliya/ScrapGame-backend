@@ -9,7 +9,7 @@ const initBrowser = async () => {
     });
 };
 
-const scrapeWebsite = async (req, res) => {
+const scrapeWindowGame = async (req, res) => {
     if (!browser) {
         return res.status(500).json({ error: 'Browser not initialized' });
     }
@@ -67,4 +67,4 @@ const scrapeWebsite = async (req, res) => {
     }
 })();
 
-module.exports = { scrapeWebsite };
+module.exports = { scrapeWindowGame };
