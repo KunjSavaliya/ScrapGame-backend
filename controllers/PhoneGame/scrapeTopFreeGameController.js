@@ -24,13 +24,13 @@ const scrapeTopFreeGame = async (req, res) => {
             const gameElements = document.querySelectorAll('.VfPpkd-EScbFb-JIbuQc');
         
             gameElements.forEach(el => {
-                const titleElement = el.querySelector('.DdYX5');
-                const categoryElements = el.querySelectorAll('.ubGTjb .w2kbF');
-                const ratingElement = el.querySelector('.CKzsaf .w2kbF');
-                const priceElement = el.querySelector('.w2kbF.ePXqnb');
-                const imageElement = el.querySelector('img');
-                const linkElement = el.querySelector('a.Si6A0c');
-        
+                    const titleElement = el.querySelector('.DdYX5');
+                    const categoryElements = el.querySelectorAll('.ubGTjb .w2kbF');
+                    const ratingElement = el.querySelector('.CKzsaf .w2kbF');
+                    const priceElement = el.querySelector('.w2kbF.ePXqnb');
+                    const imageElement = el.querySelector('img');
+                    const linkElement = el.querySelector('a.Si6A0c');
+            
                 // Adjust the selector for the "Top grossing" status
                 const grossingElement = el.querySelector('.kW9Bj .ypTNYd'); // Adjusted selector
                 const topPaidElement = document.querySelector('#ct\\|apps_topselling_paid .ypTNYd');
